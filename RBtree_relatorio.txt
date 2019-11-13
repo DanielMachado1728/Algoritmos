@@ -1,0 +1,41 @@
+___________________________________________________________
+RELATÓRIO DO PROJETO DE ALGORITMOS E ESTRUTURAS DE DADOS
+___________________________________________________________
+
+
+Classes criadas: - Nodo
+                 - Árvore_vermelho_Preto
+
+Atributos da classe Nodo: cor, chave, pai, direita, esquerda
+
+Atributos da classe Árvore_Vermelho_Preto: raiz, nil
+Obs: nil é a "sentinela", ou seja, todos os nós que apontariam para null no caso das árvores binárias, neste tipo de árvore eles apontarão para nil, com o objetivo de manter a propriedade "toda folha(nil) é preta".
+
+Métodos da classe Nodo: XXXXX
+
+Métodos da classe Arvore_Vermelho_Preto: rotação_esquerda, rotação_direita,  arvore_inserir, RB_inserir, deleteFixup, RB_deletar
+
+1 - Definição dos métodos de rotação
+
+rotação_esquerda: não altera as cores durante a sua execução. Esse método muda a estrutura de ponteiros da árvore por meio de rotações. É importante lembrar que tais rotações preservam a propriedade de árvores binárias(todo nó filho da esquerda é menor que o seu pai, e todo nó filho da direita é  maior do que seu pai).
+
+rotação_direita: assemelha-se muito com o método anterior na implementação e no funcionamento. Quanto a este último, este método não altera as cores do  nodo, apenas os ponteiros existentes na árvore. Do ponto de vista da implementação, basta trocar no método anterior "esquerda" por "direita" e "direita" por "esquerda".
+
+
+2-  Definição dos métodos que inserem
+
+arvore_inserir: apenas inseri o nodo. O método se assemelha a inserção para árvores binárias, todavia nas árvores vermelho-preto, além das inserções é necessário exercer a pintura dos nodos, e isso será feito por outra função.
+
+RB_inserir: método complementar do método anterior, uma vez que realiza a pintura dos nodos que foram inseridos.
+
+
+3- Definição dos métodos que deletam
+
+deleteFixup: restaura as seguintes propriedades - todo nó é vermelho ou preto, a raiz é preta e se um nó é vermelho, então os seus filhos são pretos.
+O objetivo do loop while é mover o preto extra para cima na árvore até: 
+1- x apontar para um nó vermelho e preto, caso em que colore-se x (isoladamente). 
+2- x apontar para a raiz, caso em que apenas remove-se o preto extra
+3- que, executadas as operações adequadas de rotações e novas colorações, saímos do laço.
+
+RB_deletar: remove um nodo da árvore vermelho-preto. O método faz uma chamada a “deleteFixup” que assegurará algumas das propriedades de uma RB Tree. Este método RB_deletar tem a mesma estrutura básica do processo de remoção de uma árvore binária comum.
+
