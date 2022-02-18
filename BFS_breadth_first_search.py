@@ -1,5 +1,6 @@
-# BFS 
+# BFS Breadth-First Search
 # Busca em Largura
+
 vertices = int(input('Digite a quantidade de vértices: '))
 grafo = [[]for i in range(vertices)]
 for i in range(vertices-1):
